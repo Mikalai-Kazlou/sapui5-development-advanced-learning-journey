@@ -8,13 +8,13 @@ sap.ui.define([
         "use strict";
 
         return Controller.extend("student00.com.sap.training.ux402.fullscreen.ux402fullscreen.controller.NotFound", {
-            getRouter: function() {
+            getRouter: function () {
                 return sap.ui.core.UIComponent.getRouterFor(this);
             },
 
-            onNavBack: function() {
+            onNavBack: function () {
                 var oHistory, sPreviousHash;
-                
+
                 oHistory = sap.ui.core.routing.History.getInstance();
                 sPreviousHash = oHistory.getPreviousHash();
 
@@ -23,7 +23,7 @@ sap.ui.define([
                 } else {
                     this.getRouter().navTo("overview", true /*no history*/);
                 }
-                
+
             }
 
         });

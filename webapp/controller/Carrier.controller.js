@@ -13,7 +13,7 @@ sap.ui.define([
                 return sap.ui.core.UIComponent.getRouterFor(this);
             },
 
-            onPress: function(oEvent) {
+            onPress: function (oEvent) {
 
                 var oItem = oEvent.getSource();
                 var oCtx = oItem.getBindingContext();

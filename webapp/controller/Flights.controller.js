@@ -13,9 +13,11 @@ sap.ui.define([
                 oRouter.getRoute("flights").attachMatched(this._onObjectMatched, this);
 
             },
+
             getRouter: function () {
                 return sap.ui.core.UIComponent.getRouterFor(this);
             },
+
             _onObjectMatched: function (oEvent) {
                 var oArgs = oEvent.getParameter("arguments");
                 this._sCarrierId = oArgs.carrid;
@@ -36,9 +38,7 @@ sap.ui.define([
             },
 
             _onBindingChange: function () {
-                var oElementBinding;
-
-                oElementBinding = this.getView().getElementBinding();
+                const oElementBinding = this.getView().getElementBinding();
 
                 // No data for the binding 
                 if (oElementBinding && !oElementBinding.getBoundContext()) {
