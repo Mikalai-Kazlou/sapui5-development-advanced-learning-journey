@@ -85,15 +85,19 @@
     "routing": {
       "config": {
         "routerClass": "sap.m.routing.Router",
-        "viewType": "XML",
         "async": true,
-        "viewPath": "student.com.sap.training.advancedsapui5.listdetail.view",
-        "controlAggregation": "pages",
-        "controlId": "app",
-        "clearControlAggregation": false,
+        "type": "View",
+        "viewType": "XML",
+        "path": "student.com.sap.training.advancedsapui5.listdetail.view",
+        "controlAggregation": "beginColumnPages",
+        "controlId": "layout",
+        "clearControlAggregation": true,
         "transition": "slide",
         "bypassed": {
-          "target": ["notFound"]
+          "target": [
+            "overview",
+            "notFound"
+          ]
         }
       },
       "routes": [
@@ -109,28 +113,38 @@
           "pattern": "carriers/{carrid}",
           "titleTarget": "",
           "greedy": false,
-          "target": ["flights"]
+          "target": [
+            "overview",
+            "flights"
+          ]
         }
       ],
       "targets": {
         "overview": {
+          "type": "View",
           "viewType": "XML",
           "transition": "slide",
-          "clearControlAggregation": false,
-          "viewId": "Carrier",
-          "viewName": "Carrier"
+          "controlAggregation": "beginColumnPages",
+          "id": "Carrier",
+          "name": "Carrier",
+          "level": 1
         },
         "flights": {
+          "type": "View",
           "viewType": "XML",
           "transition": "slide",
-          "viewId": "Flights",
-          "viewName": "Flights",
-          "viewLevel": 2
+          "controlAggregation": "midColumnPages",
+          "id": "Flights",
+          "name": "Flights",
+          "level": 2
         },
         "notFound": {
-          "viewId": "NotFound",
-          "viewName": "NotFound",
-          "transition": "show"
+          "type": "View",
+          "viewType": "XML",
+          "transition": "show",
+          "controlAggregation": "midColumnPages",
+          "id": "NotFound",
+          "name": "NotFound"
         }
       }
     },
