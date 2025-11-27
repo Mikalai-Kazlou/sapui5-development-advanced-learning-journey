@@ -1,9 +1,10 @@
 <mvc:View
     controllerName="student00.com.sap.training.ux402.fullscreen.ux402fullscreen.controller.Flights"
+    xmlns:cust="student00.com.sap.training.ux402.fullscreen.ux402fullscreen.control"
     xmlns:mvc="sap.ui.core.mvc"
-    displayBlock="true"
-    xmlns="sap.m"
     xmlns:l="sap.ui.layout"
+    xmlns="sap.m"
+    displayBlock="true"
 >
     <Page
         id="idFlightsPage"
@@ -87,6 +88,17 @@
                             text="{i18n>seatocc}"
                         />
                     </Column>
+                    <Column
+                        id="flbooking"
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                        hAlign="Center"
+                    >
+                        <Text
+                            id="flbookingtext"
+                            text="{i18n>bookaction}"
+                        />
+                    </Column>
                 </columns>
                 <items>
                     <ColumnListItem id="columnListItem1">
@@ -107,6 +119,13 @@
                             <Text
                                 id="text7"
                                 text="{Seatsocc}"
+                            />
+                            <cust:HoverButton
+                                id="hoverButton1"
+                                text="{i18n>bookaction}"
+                                allowHover="true"
+                                hoverText="{=${Seatsmax} - ${Seatsocc}}"
+                                hover="onHover"
                             />
                         </cells>
                     </ColumnListItem>
