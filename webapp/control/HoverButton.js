@@ -5,7 +5,7 @@ sap.ui.define(
     "use strict";
 
     return Button.extend(
-      "student.com.sap.training.advancedsapui5.fullscreen.control.HoverButton",
+      "student00.com.sap.training.ux402.fullscreen.ux402fullscreen.control.HoverButton",
       {
         metadata: {
           properties: {

@@ -89,6 +89,17 @@
                         />
                     </Column>
                     <Column
+                        id="flplaneinfo"
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                        hAlign="Center"
+                    >
+                        <Text
+                            id="flplaneinfotext"
+                            text="{i18n>planeInfo}"
+                        />
+                    </Column>
+                    <Column
                         id="flbooking"
                         minScreenWidth="Tablet"
                         demandPopin="true"
@@ -119,6 +130,11 @@
                             <Text
                                 id="text7"
                                 text="{Seatsocc}"
+                            />
+                            <cust:PlaneInfo
+                                id="planeInfo1"
+                                seatsMax="{Seatsmax}"
+                                seatsOcc="{Seatsocc}"
                             />
                             <cust:HoverButton
                                 id="hoverButton1"
